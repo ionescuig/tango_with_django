@@ -192,14 +192,14 @@ class Chapter6ViewTests(TestCase):
 
     # are categories displayed on index page?
 
-    # does the category model have a slug field?
+    # does the category model have a name field?
 
-    # test the slug field works..
-    def test_does_slug_field_work(self):
+    # test the name field works..
+    def test_does_name_field_work(self):
         from rango.models import Category
-        cat = Category(name='how do i create a slug in django')
+        cat = Category(name='how do i create a name in django')
         cat.save()
-        self.assertEqual(cat.name, 'how do i create a slug in django')
+        self.assertEqual(cat.name, 'how do i create a name in django')
 
     # test category view does the page exist?
 
