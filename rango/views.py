@@ -1,11 +1,10 @@
 from datetime import datetime
-from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse
-from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
-from django.http import HttpResponseRedirect, HttpResponse
-from rango.models import Category, Page
+from django.http import HttpResponse
 from django.shortcuts import render
+from rango.bing_search import run_query
+from rango.forms import CategoryForm, PageForm
+from rango.models import Category, Page
 
 
 def index(request):
@@ -156,3 +155,14 @@ def about(request):
 def restricted(request):
     return HttpResponse("Since you're logged in, you can see this text!")
 
+
+def search(request):
+    result_list = []
+
+    if request.method == 'POST':
+        query = request.POST['query'].strip()
+        if query:
+            # Run our Bing function to get the results list!
+            result_list = run_query(query)
+
+    return render(request, 'rango/search.html', {'result_list': result_list})
