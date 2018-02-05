@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 {% load rango_template_tags %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- OR if working from local
+<script src="{% static "js/jquery-2.1.4.js" %}></script>"
+-->
+<script src="{% static 'js/rango-jquery.js' %}"></script>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -34,7 +39,6 @@
             <nav class="nav navbar-nav pull-xs-left">
                 <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
                 <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
-                <a class="nav-item nav-link" href="{% url 'search' %}">Search</a>
                 {% if user.is_authenticated %}
                     <a class="nav-item nav-link" href="{% url 'add_category' %}">
                         Add a New Category</a>

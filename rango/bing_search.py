@@ -27,8 +27,9 @@ def run_query(search_terms):
         raise KeyError('Bing Key Not Found')
 
     # Specify the base url and the service
-    # root_url = "https://api.datamarket.azure.com/Bing/Search/"
-    root_url = "https://api.cognitive.microsoft.com/bing/v7.0/search"
+    root_url = "https://api.datamarket.azure.com/Bing/Search/"
+    # root_url = "https://api.datamarket.azure.com:443"
+    # root_url = "https://api.cognitive.microsoft.com/bing/v7.0/search"
     service = 'Web'
 
     # Specify how many results we wish to be returned per page.
@@ -84,6 +85,7 @@ def run_query(search_terms):
                             'summary': result['Description']})
     except:
         print("Error when querying the Bing API")
+
 
     # Return the list of results to the calling function.
     return results
