@@ -63,17 +63,18 @@
                 {% block sidebar_block %}
                     {% get_category_list category %}
                 {% endblock %}
+                <br/>
                 <ul class="nav nav-list flex-column">
                     <li class="nav-header">Find a category</li>
                     <form>
-                        <label></label>
+                        <!-- <label></label> -->
                         <li class="nav-item">
                             <input class="search-query form-control span10" type="text"
                                    name="suggestion" value="" id="suggestion" />
                         </li>
                     </form>
                 </ul>
-                <div id="cats" style="border:solid 3px red">
+                <div id="cats">
                 </div>
             </div>
 
