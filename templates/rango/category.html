@@ -6,15 +6,17 @@
 {% endblock %}
 
 {% block body_block %}
+    <!--
     <form class="form-inline" id="user_form" method="post"
           action="{% url 'show_category' category.slug %}">
         {% csrf_token %}
-        <!-- Display the search form elements here -->
+        <!-- Display the search form elements here
         <input class="form-control" type="text" size="50"
                    name="query" value="{{query}}" id="query" />
         <input class="btn btn-primary" type="submit" name="submit"
                 value="Search" />
     </form>
+    -->
     <div>
         {% if results_list %}
         <h3>Results</h3>

@@ -1,0 +1,6 @@
+coverage==4.5
+Django==1.11.7
+django-bootstrap-toolkit==2.15.0
+django-registration-redux==2.1
+Pillow==5.0.0
+pytz==2017.3
