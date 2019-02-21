@@ -1,2 +1,2 @@
 # Tango with django 1.9
-work in progress...
+Tango with django 1.9 tutorial
